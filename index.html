@@ -19,10 +19,10 @@
 <meta property="og:url" content="https://empanadaselprogreso.com.ar/">
 <!-- TODO: agregar og:image con URL ABSOLUTA cuando esté el dominio definitivo (ej. https://empanadaselprogreso.com.ar/img/hero-casa-de-empanadas-el-progreso-en-caba-0012.jpg) -->
 
-<!-- Fuentes: League Spartan (títulos) + Inter (cuerpo). Única dependencia externa. -->
+<!-- Fuentes: Reddit Sans Condensed (títulos) + Inter (cuerpo). Única dependencia externa. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reddit+Sans+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap">
 
 <!-- LCP: precarga de la imagen del hero -->
 <link rel="preload" as="image" href="img/hero-casa-de-empanadas-el-progreso-en-caba-0012.jpg" fetchpriority="high">
@@ -52,7 +52,7 @@
   --line:rgba(19,17,15,.18);
   --line-light:rgba(245,228,206,.22);
 
-  --font-title:"League Spartan","Century Gothic","Avenir Next",system-ui,sans-serif;
+  --font-title:"Reddit Sans Condensed","Arial Narrow","Roboto Condensed",system-ui,sans-serif;
   --font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 
   --sec-y:64px;          /* padding vertical de sección: 64 mobile */
@@ -72,11 +72,12 @@ html{scroll-behavior:smooth;scroll-padding-top:var(--header-h);-webkit-text-size
 body{margin:0;font-family:var(--font-body);font-size:1.0625rem;line-height:1.65;color:var(--ink);background:var(--bg);overflow-x:clip;-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
-/* Títulos: League Spartan (variable 500–700). H1/H2 700, H3 600 */
-h1,h2,h3{font-family:var(--font-title);font-weight:700;line-height:1.08;letter-spacing:-.015em;margin:0 0 .5em;text-wrap:balance}
-h1{font-size:clamp(2.2rem,5.6vw,4.25rem);line-height:1.04;letter-spacing:-.02em}
-h2{font-size:clamp(1.85rem,3.8vw,3rem)}
-h3{font-size:clamp(1.2rem,2vw,1.5rem);line-height:1.2;font-weight:600;letter-spacing:-.01em}
+/* Títulos: Reddit Sans Condensed (variable 500–800). H1 800 · H2 700 · H3 600 · cifras destacadas 800.
+   Al ser condensada se usa un tamaño mayor y tracking casi neutro. */
+h1,h2,h3{font-family:var(--font-title);font-weight:700;line-height:1.05;letter-spacing:-.005em;margin:0 0 .5em;text-wrap:balance}
+h1{font-size:clamp(2.6rem,6.6vw,4.9rem);line-height:1;font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(2.1rem,4.4vw,3.5rem)}
+h3{font-size:clamp(1.35rem,2.2vw,1.7rem);line-height:1.15;font-weight:600;letter-spacing:0}
 p{margin:0 0 1em}
 ul{margin:0;padding:0;list-style:none}
 :focus-visible{outline:3px solid var(--red-ink);outline-offset:3px;border-radius:4px}
@@ -148,13 +149,13 @@ ul{margin:0;padding:0;list-style:none}
 .hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(19,17,15,.6) 0%,rgba(19,17,15,.5) 40%,rgba(19,17,15,.85) 100%)}
 .hero__inner{max-width:780px}
-@media (min-width:960px){.hero__inner{max-width:960px}.hero h1{font-size:clamp(3rem,6.7vw,5.1rem)}} /* escritorio: H1 +20% */
+@media (min-width:960px){.hero__inner{max-width:960px}.hero h1{font-size:clamp(3.6rem,8vw,6.2rem)}} /* escritorio: H1 +20% */
 .hero h1{color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.35)}
 .hero p.lead{max-width:56ch;color:var(--cream)}
 .hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin:2rem 0 1.4rem}
 .hero__link{display:inline-flex;align-items:center;gap:.5em;color:var(--cream);font-size:.95rem;text-underline-offset:4px}
 .hero__link:hover{color:var(--yellow)}
-.hero h1 .hl{color:var(--yellow)}
+.hero h1 .hl{color:var(--yellow);white-space:nowrap}
 
 /* ============================================================
    3. SOBRE NOSOTROS (imagen lateral)
@@ -165,7 +166,7 @@ ul{margin:0;padding:0;list-style:none}
 .pillars{display:grid;gap:22px;margin-top:2rem}
 .pillar{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
 .pillar .i{width:34px;height:34px;color:var(--red-ink);margin-top:2px}
-.pillar h3{margin-bottom:.25em;font-size:1.3rem}
+.pillar h3{margin-bottom:.25em;font-size:1.5rem}
 .pillar p{margin:0;color:var(--ink-soft)}
 
 /* ============================================================
@@ -179,7 +180,7 @@ ul{margin:0;padding:0;list-style:none}
 @media (min-width:900px){.tiers{grid-template-columns:1.25fr 1fr 1fr;gap:0}.tier{padding:0 40px;border-left:1px solid var(--line-light)}.tier:first-child{padding-left:0;border-left:0}.tier:last-child{padding-right:0}}
 .tier{padding-block:8px}
 @media (max-width:899px){.tier{padding:28px 0;border-top:1px solid var(--line-light)}}
-.tier__price{font-family:var(--font-title);font-weight:700;font-size:clamp(2rem,4vw,2.75rem);color:var(--yellow);line-height:1;margin:.3rem 0 1.2rem}
+.tier__price{font-family:var(--font-title);font-weight:800;font-size:clamp(2.4rem,4.6vw,3.3rem);color:var(--yellow);line-height:1;margin:.3rem 0 1.2rem}
 .tier__price small{font-family:var(--font-body);font-size:.9rem;color:var(--cream-soft);font-weight:400;margin-left:.4em}
 .tier ul li{padding:.55em 0;border-bottom:1px solid var(--line-light)}
 .tier ul li:last-child{border-bottom:0}
@@ -190,13 +191,13 @@ ul{margin:0;padding:0;list-style:none}
 @media (min-width:900px){.tier__img{aspect-ratio:auto;height:210px}} /* misma altura en las 3 columnas para alinear títulos */
 
 .pricing{margin-top:clamp(56px,8vw,96px);max-width:760px}
-.pricing h2{font-size:clamp(1.6rem,3vw,2.25rem)}
+.pricing h2{font-size:clamp(1.9rem,3.4vw,2.6rem)}
 .table-wrap{overflow-x:auto;margin-top:1.4rem;-webkit-overflow-scrolling:touch}
 table{width:100%;border-collapse:collapse;min-width:460px}
 th,td{text-align:left;vertical-align:middle;padding:16px 14px 16px 0;border-bottom:1px solid var(--line-light)}
 thead th{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-soft);font-weight:600}
 td:not(:first-child),th:not(:first-child){text-align:right;padding-right:0;padding-left:14px;white-space:nowrap}
-tbody td:last-child{font-family:var(--font-title);font-weight:600;font-size:1.3rem;color:var(--yellow)}
+tbody td:last-child{font-family:var(--font-title);font-weight:700;font-size:1.5rem;color:var(--yellow)}
 .pricing .note{margin-top:1rem;color:var(--cream-soft);font-size:.95rem;display:flex;gap:.6em;align-items:center}
 
 /* ============================================================
@@ -224,7 +225,7 @@ tbody td:last-child{font-family:var(--font-title);font-weight:600;font-size:1.3r
 .bleed--red h2{color:var(--cream)}
 .promo{display:grid;gap:40px;align-items:center}
 .promo__body{max-width:540px}
-.promo__big{font-family:var(--font-title);font-weight:700;letter-spacing:-.03em;font-size:clamp(2.6rem,7vw,4.6rem);line-height:1;margin:.2em 0 .1em;color:var(--cream)}
+.promo__big{font-family:var(--font-title);font-weight:800;letter-spacing:-.01em;font-size:clamp(3.4rem,9vw,6rem);line-height:1;margin:.2em 0 .1em;color:var(--cream)}
 .promo__facts{display:flex;flex-wrap:wrap;gap:10px 24px;margin:1.4rem 0 1.8rem;font-weight:500}
 .promo__facts li{display:flex;align-items:center;gap:.5em}
 /* PNG transparente: segunda columna, centrado verticalmente respecto del texto */
@@ -240,14 +241,14 @@ tbody td:last-child{font-family:var(--font-title);font-weight:600;font-size:1.3r
 .card{background:var(--paper);border:2px solid var(--black);border-radius:var(--radius);padding:32px 28px;box-shadow:6px 6px 0 var(--black);transition:transform .25s,box-shadow .25s}
 .card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--black)}
 .card .i{width:40px;height:40px;color:var(--red-ink);margin-bottom:18px}
-.card h3{font-size:1.35rem;margin-bottom:.4em}
+.card h3{font-size:1.55rem;margin-bottom:.4em}
 .card p{margin:0;color:var(--ink-soft)}
-.card__n{font-family:var(--font-title);font-weight:600;font-size:.95rem;color:var(--red-ink);letter-spacing:.1em;margin-bottom:.4rem;display:block}
+.card__n{font-family:var(--font-title);font-weight:700;font-size:1rem;color:var(--red-ink);letter-spacing:.1em;margin-bottom:.4rem;display:block}
 .cards--facts{margin-top:20px}
 .cards--facts .card{background:var(--yellow);padding:24px 28px;display:grid;grid-template-columns:auto 1fr;gap:6px 16px;align-items:center}
 .cards--facts .card .i{margin:0;width:32px;height:32px;grid-row:span 2;color:var(--black)}
 .cards--facts .card p{color:var(--ink)}
-.cards--facts .card h3{margin:0;font-size:1.15rem}
+.cards--facts .card h3{margin:0;font-size:1.3rem}
 .orderline{margin-top:2rem;font-size:1rem}
 .orderline a{font-weight:600;text-underline-offset:3px;white-space:nowrap}
 
@@ -257,7 +258,7 @@ tbody td:last-child{font-family:var(--font-title);font-weight:600;font-size:1.3r
 .testimonials{display:grid;gap:20px}
 @media (min-width:800px){.testimonials{grid-template-columns:repeat(3,1fr)}}
 .quote{margin:0;background:var(--paper);border:2px solid var(--black);box-shadow:6px 6px 0 var(--black);border-radius:var(--radius);padding:32px 28px}
-.quote blockquote{margin:0 0 1.2rem;font-family:var(--font-title);font-weight:500;font-size:1.25rem;line-height:1.35}
+.quote blockquote{margin:0 0 1.2rem;font-family:var(--font-title);font-weight:600;font-size:1.45rem;line-height:1.25}
 .quote figcaption{font-size:.92rem;color:var(--ink-soft)}
 
 /* ============================================================
@@ -278,7 +279,7 @@ address{font-style:normal}
 @media (min-width:560px){.info{grid-template-columns:1fr 1fr}}
 .info__item{background:var(--black-2);border:1.5px solid var(--line-light);border-radius:var(--radius);padding:26px 24px;display:flex;flex-direction:column;gap:6px}
 .info__item .i{width:32px;height:32px;color:var(--yellow);margin-bottom:10px}
-.info__item h3{font-size:1.15rem;margin:0}
+.info__item h3{font-size:1.3rem;margin:0}
 .info__item p{margin:0;color:var(--cream-soft);font-size:1rem}
 .info__item a{text-underline-offset:3px;color:var(--cream)}
 .info__item--wide{grid-column:1/-1}
@@ -289,7 +290,7 @@ address{font-style:normal}
 .faq{max-width:820px}
 .faq details{border-bottom:2px solid var(--black)}
 .faq details:first-of-type{border-top:2px solid var(--black)}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:22px 0;font-family:var(--font-title);font-size:clamp(1.1rem,2vw,1.3rem);font-weight:600;line-height:1.25}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:22px 0;font-family:var(--font-title);font-size:clamp(1.3rem,2.2vw,1.55rem);font-weight:600;line-height:1.2}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary .i{transition:transform .25s;color:var(--red-ink)}
 .faq details[open] summary .i{transform:rotate(180deg)}
