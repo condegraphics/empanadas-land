@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ============================================================
+  EDITAR: SEO. Title ≈56 car. / Description ≈145 car. (según documento de textos)
+============================================================ -->
+<title>Empanadas al Horno de Barro en Buenos Aires | El Progreso</title>
+<meta name="description" content="Empanadas al horno de barro hechas a mano desde $1.500. 3 docenas clásicas por $49.900. Retiro en Sarmiento 1334, todos los días de 8 a 23 h.">
+<link rel="canonical" href="https://empanadaselprogreso.com.ar/">
+<link rel="icon" href="img/logo-empanadas-el-progreso.svg" type="image/svg+xml">
+<meta name="theme-color" content="#373435">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Empanadas al Horno de Barro en Buenos Aires | El Progreso">
+<meta property="og:description" content="Empanadas al horno de barro hechas a mano desde $1.500. Retiro en Sarmiento 1334, todos los días de 8 a 23 h.">
+<meta property="og:url" content="https://empanadaselprogreso.com.ar/">
+<!-- TODO: agregar og:image con URL ABSOLUTA cuando esté el dominio definitivo (ej. https://empanadaselprogreso.com.ar/img/hero-casa-de-empanadas-el-progreso-en-caba-0012.jpg) -->
+
+<!-- Fuentes: Fraunces (títulos) + Inter (cuerpo). Única dependencia externa. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap">
+
+<!-- LCP: precarga de la imagen del hero -->
+<link rel="preload" as="image" href="img/hero-casa-de-empanadas-el-progreso-en-caba-0012.jpg" fetchpriority="high">
+
+<script>document.documentElement.classList.add('js')</script>
+
+<style>
+/* ============================================================
+   VARIABLES — EDITAR COLORES AQUÍ (Paleta B: carbón y oliva, desde el logo)
+============================================================ */
+:root{
+  --bg:#EFEADF;          /* fondo base crema */
+  --bg-alt:#E4DECF;      /* crema más oscuro (secciones alternas) */
+  --ink:#373435;         /* texto / carbón del logo */
+  --ink-soft:#5b5657;    /* texto secundario */
+  --carbon:#373435;      /* sección sólida 1 */
+  --carbon-deep:#2a2728; /* footer */
+  --olive:#B6B193;       /* sección sólida 2 (oliva del logo) */
+  --amber:#C8872E;       /* CTA / acento */
+  --amber-hover:#D99A3F;
+  --on-amber:#1e1b1c;    /* texto sobre ámbar (contraste AA) */
+  --cream:#EFEADF;
+  --line:rgba(55,52,53,.16);
+  --line-light:rgba(239,234,223,.22);
+
+  --font-title:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+
+  --sec-y:64px;          /* padding vertical de sección: 64 mobile */
+  --wrap:1160px;
+  --gutter:20px;
+  --header-h:68px;
+  --radius:14px;
+}
+@media (min-width:640px){:root{--sec-y:88px;--gutter:32px}}
+@media (min-width:960px){:root{--sec-y:120px;--header-h:76px}} /* 120 desktop */
+
+/* ============================================================
+   BASE
+============================================================ */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--header-h);-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font-body);font-size:1.0625rem;line-height:1.65;color:var(--ink);background:var(--bg);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-title);font-weight:600;line-height:1.12;letter-spacing:-.01em;margin:0 0 .5em;text-wrap:balance}
+h1{font-size:clamp(2.1rem,5.4vw,4rem)}
+h2{font-size:clamp(1.75rem,3.6vw,2.75rem)}
+h3{font-size:clamp(1.2rem,2vw,1.5rem);line-height:1.25}
+p{margin:0 0 1em}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:8px;background:var(--amber);color:var(--on-amber);padding:10px 16px;z-index:100;border-radius:8px}
+.skip:focus{left:8px}
+
+.wrap{width:100%;max-width:calc(var(--wrap) + var(--gutter)*2);margin-inline:auto;padding-inline:var(--gutter)}
+.section{padding-block:var(--sec-y);position:relative}
+.eyebrow{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--amber);margin:0 0 1rem}
+.lead{font-size:clamp(1.1rem,1.6vw,1.3rem);line-height:1.6}
+.muted{color:var(--ink-soft)}
+
+/* Íconos SVG lineales (trazo 1.5px) */
+.i{width:1.35em;height:1.35em;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;padding:.95em 1.6em;border-radius:999px;font-weight:600;font-size:1rem;line-height:1;text-decoration:none;border:1.5px solid transparent;transition:background-color .2s,color .2s,border-color .2s,transform .2s;cursor:pointer;min-height:48px}
+.btn--primary{background:var(--amber);color:var(--on-amber)}
+.btn--primary:hover{background:var(--amber-hover)}
+.btn--ghost{border-color:rgba(239,234,223,.6);color:var(--cream)}
+.btn--ghost:hover{background:rgba(239,234,223,.12);border-color:var(--cream)}
+.btn--dark{background:var(--carbon);color:var(--cream)}
+.btn--dark:hover{background:#4a4647}
+.btn:active{transform:translateY(1px)}
+
+/* ============================================================
+   ANIMACIONES (fade-in + translateY sutil). Solo si hay JS.
+============================================================ */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;transition-delay:var(--d,0s)}
+.js .reveal.is-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  *{transition-duration:.01ms!important}
+}
+
+/* ============================================================
+   1. HEADER FIJO
+============================================================ */
+.header{position:fixed;inset:0 0 auto 0;height:var(--header-h);background:var(--carbon);color:var(--cream);z-index:50;border-bottom:1px solid var(--line-light)}
+.header .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;flex:none}
+.brand img{height:calc(var(--header-h) - 18px);width:auto}
+.nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;background:none;border:0;color:var(--cream);cursor:pointer;border-radius:8px}
+.nav-toggle .i{width:28px;height:28px}
+.nav-toggle .i-close{display:none}
+.nav-toggle[aria-expanded="true"] .i-open{display:none}
+.nav-toggle[aria-expanded="true"] .i-close{display:block}
+.nav{position:absolute;top:var(--header-h);left:0;right:0;background:var(--carbon);padding:8px var(--gutter) 24px;display:none;flex-direction:column;border-bottom:1px solid var(--line-light)}
+.nav.is-open{display:flex}
+.nav a{text-decoration:none;padding:14px 0;border-bottom:1px solid var(--line-light);font-weight:500}
+.nav a:hover{color:var(--amber)}
+.nav .btn{margin-top:18px;border-bottom:0;color:var(--on-amber)}
+.nav .btn:hover{color:var(--on-amber)}
+@media (min-width:960px){
+  .nav-toggle{display:none}
+  .nav{position:static;display:flex;flex-direction:row;align-items:center;gap:1.6rem;padding:0;background:none;border:0}
+  .nav a{padding:6px 0;border:0;font-size:.95rem}
+  .nav .btn{margin:0 0 0 .4rem;padding:.8em 1.3em;min-height:44px}
+}
+
+/* ============================================================
+   2. HERO FULL-SCREEN
+============================================================ */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;color:var(--cream);background:var(--carbon-deep);padding:calc(var(--header-h) + 48px) 0 64px;isolation:isolate}
+.hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(30,27,28,.55) 0%,rgba(30,27,28,.45) 40%,rgba(30,27,28,.8) 100%)}
+.hero__inner{max-width:780px}
+.hero h1{color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.hero p.lead{max-width:56ch;color:#F4EFE4}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin:2rem 0 1.4rem}
+.hero__link{display:inline-flex;align-items:center;gap:.5em;color:#F4EFE4;font-size:.95rem;text-underline-offset:4px}
+.hero__link:hover{color:var(--amber)}
+
+/* ============================================================
+   3. SOBRE NOSOTROS (imagen lateral)
+============================================================ */
+.split{display:grid;gap:40px;align-items:center}
+@media (min-width:900px){.split{grid-template-columns:1fr 1fr;gap:80px}.split--rev .split__media{order:2}}
+.split__media img{width:100%;border-radius:var(--radius);aspect-ratio:1/1;object-fit:cover}
+.pillars{display:grid;gap:22px;margin-top:2rem}
+.pillar{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.pillar .i{width:34px;height:34px;color:var(--amber);margin-top:2px}
+.pillar h3{margin-bottom:.25em;font-size:1.2rem}
+.pillar p{margin:0;color:var(--ink-soft)}
+
+/* ============================================================
+   4. FULL-BLEED COLOR SÓLIDO 1 (carbón) — Variedades y precios
+============================================================ */
+.bleed{width:100%;color:var(--cream)}
+.bleed--carbon{background:var(--carbon)}
+.bleed .eyebrow{color:var(--amber)}
+.tiers{display:grid;gap:24px;margin-top:3rem}
+@media (min-width:900px){.tiers{grid-template-columns:1.25fr 1fr 1fr;gap:0}.tier{padding:0 40px;border-left:1px solid var(--line-light)}.tier:first-child{padding-left:0;border-left:0}.tier:last-child{padding-right:0}}
+.tier{padding-block:8px}
+@media (max-width:899px){.tier{padding:28px 0;border-top:1px solid var(--line-light)}}
+.tier__price{font-family:var(--font-title);font-size:clamp(2rem,4vw,2.75rem);color:var(--amber);line-height:1;margin:.3rem 0 1.2rem}
+.tier__price small{font-family:var(--font-body);font-size:.9rem;color:#cfc9bc;font-weight:400;margin-left:.4em}
+.tier ul li{padding:.55em 0;border-bottom:1px solid var(--line-light)}
+.tier ul li:last-child{border-bottom:0}
+.tier ul li span{display:block;font-size:.95rem;color:#cfc9bc;margin-top:.15em}
+.tier p{color:#e0dacd}
+.tier h3{margin-bottom:0}
+
+.pricing{margin-top:clamp(56px,8vw,96px);max-width:760px}
+.pricing h2{font-size:clamp(1.5rem,2.8vw,2.1rem)}
+.table-wrap{overflow-x:auto;margin-top:1.4rem;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:460px}
+th,td{text-align:left;padding:16px 14px 16px 0;border-bottom:1px solid var(--line-light)}
+thead th{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:#cfc9bc;font-weight:600}
+td:not(:first-child),th:not(:first-child){text-align:right;padding-right:0;padding-left:14px;white-space:nowrap}
+tbody td:last-child{font-family:var(--font-title);font-size:1.25rem;color:var(--amber)}
+.pricing .note{margin-top:1rem;color:#cfc9bc;font-size:.95rem;display:flex;gap:.6em;align-items:center}
+
+/* ============================================================
+   5. GALERÍA (CSS grid) con hover elegante
+============================================================ */
+.section-head{max-width:640px;margin-bottom:clamp(32px,5vw,56px)}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:160px;grid-auto-flow:dense;gap:12px}
+.gallery figure{margin:0;position:relative;overflow:hidden;border-radius:var(--radius);background:var(--bg-alt)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.gallery figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(30,27,28,.45));opacity:0;transition:opacity .5s}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery figure:hover::after{opacity:1}
+.gallery .tall{grid-row:span 2}
+@media (min-width:640px){.gallery{grid-template-columns:repeat(3,1fr);grid-auto-rows:200px;gap:16px}}
+@media (min-width:960px){.gallery{grid-template-columns:repeat(4,1fr);grid-auto-rows:230px}}
+
+/* ============================================================
+   6. FULL-BLEED COLOR SÓLIDO 2 (oliva) + PNG transparente que sobresale
+   El padre usa overflow:visible; el PNG se posiciona en absoluto y
+   "cae" sobre la sección siguiente (ver --overlap).
+============================================================ */
+.bleed--olive{--overlap:70px;background:var(--olive);color:var(--ink);overflow:visible;z-index:2;padding-bottom:calc(var(--sec-y) + 150px)}
+.bleed--olive .eyebrow{color:#6b4410}
+.promo__body{max-width:540px;position:relative;z-index:1}
+.promo__big{font-family:var(--font-title);font-size:clamp(2.6rem,7vw,4.6rem);line-height:1;margin:.2em 0 .1em;color:var(--carbon)}
+.promo__facts{display:flex;flex-wrap:wrap;gap:10px 24px;margin:1.4rem 0 1.8rem;font-weight:500}
+.promo__facts li{display:flex;align-items:center;gap:.5em}
+.promo__png{position:absolute;right:0;bottom:calc(var(--overlap) * -1);width:min(86vw,420px);height:auto;z-index:3;filter:drop-shadow(0 24px 28px rgba(30,27,28,.32));pointer-events:none}
+@media (min-width:640px){.bleed--olive{--overlap:90px;padding-bottom:calc(var(--sec-y) + 40px)}.promo__png{right:2%;width:min(52vw,480px)}}
+@media (min-width:960px){.bleed--olive{--overlap:120px;padding-bottom:var(--sec-y)}.promo__png{right:4%;width:min(46vw,600px)}}
+.after-overlap{padding-top:calc(var(--sec-y) + 70px)}
+@media (min-width:640px){.after-overlap{padding-top:calc(var(--sec-y) + 90px)}}
+@media (min-width:960px){.after-overlap{padding-top:calc(var(--sec-y) + 60px)}}
+
+/* ============================================================
+   7. CARDS CON ÍCONOS (cómo pedir + datos clave)
+============================================================ */
+.cards{display:grid;gap:20px}
+@media (min-width:700px){.cards{grid-template-columns:repeat(3,1fr);gap:24px}}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -22px rgba(55,52,53,.45)}
+.card .i{width:40px;height:40px;color:var(--amber);margin-bottom:18px}
+.card h3{font-size:1.25rem;margin-bottom:.4em}
+.card p{margin:0;color:var(--ink-soft)}
+.card__n{font-family:var(--font-title);font-size:.95rem;color:var(--amber);letter-spacing:.1em;margin-bottom:.4rem;display:block}
+.cards--facts{margin-top:20px}
+.cards--facts .card{background:transparent;padding:24px 28px;display:grid;grid-template-columns:auto 1fr;gap:6px 16px;align-items:center}
+.cards--facts .card .i{margin:0;width:32px;height:32px;grid-row:span 2}
+.cards--facts .card h3{margin:0;font-size:1.05rem}
+.orderline{margin-top:2rem;font-size:1rem}
+.orderline a{font-weight:600;text-underline-offset:3px;white-space:nowrap}
+
+/* ============================================================
+   8. TESTIMONIOS (ver comentario en el HTML: activar con reseñas reales)
+============================================================ */
+.testimonials{display:grid;gap:20px}
+@media (min-width:800px){.testimonials{grid-template-columns:repeat(3,1fr)}}
+.quote{margin:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px}
+.quote blockquote{margin:0 0 1.2rem;font-family:var(--font-title);font-size:1.2rem;line-height:1.4}
+.quote figcaption{font-size:.92rem;color:var(--ink-soft)}
+
+/* ============================================================
+   UBICACIÓN
+============================================================ */
+.bg-alt{background:var(--bg-alt)}
+.contact-list{display:grid;gap:22px;margin:1.8rem 0 0}
+.contact-list li{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.contact-list .i{color:var(--amber);width:28px;height:28px;margin-top:2px}
+.contact-list strong{display:block;font-weight:600}
+.contact-list a{text-underline-offset:3px}
+address{font-style:normal}
+.map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:320px;background:var(--bg-alt)}
+.map iframe{display:block;width:100%;height:100%;min-height:360px;border:0}
+
+/* ============================================================
+   FAQ (details/summary nativo, sin JS)
+============================================================ */
+.faq{max-width:820px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-of-type{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:22px 0;font-family:var(--font-title);font-size:clamp(1.1rem,2vw,1.3rem);font-weight:600;line-height:1.3}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .i{transition:transform .25s;color:var(--amber)}
+.faq details[open] summary .i{transform:rotate(180deg)}
+.faq details p{margin:0;padding:0 0 24px;max-width:64ch;color:var(--ink-soft)}
+
+/* ============================================================
+   BLOQUE PUENTE B2B (#gremio)
+============================================================ */
+.gremio img{width:100%;border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover}
+.gremio .btn{margin-top:.6rem}
+
+/* ============================================================
+   CTA FINAL
+============================================================ */
+.cta-final{position:relative;color:var(--cream);text-align:center;isolation:isolate;overflow:hidden;background:var(--carbon-deep)}
+.cta-final__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.cta-final::after{content:"";position:absolute;inset:0;background:rgba(30,27,28,.72);z-index:-1}
+.cta-final h2{color:#fff}
+.cta-final p{max-width:52ch;margin-inline:auto;font-size:1.15rem}
+.cta-final .btn{margin-top:1rem}
+
+/* ============================================================
+   9. FOOTER
+============================================================ */
+.footer{background:var(--carbon-deep);color:#d9d3c6;padding:clamp(56px,8vw,88px) 0 32px}
+.footer__grid{display:grid;gap:40px}
+@media (min-width:900px){.footer__grid{grid-template-columns:1.1fr 2fr;gap:80px}}
+.footer__logo img{width:150px;height:auto}
+.footer__logo p{margin:1.2rem 0 0;max-width:30ch;font-size:.95rem}
+.footer .contact-list{margin:0;grid-template-columns:1fr}
+@media (min-width:640px){.footer .contact-list{grid-template-columns:1fr 1fr;gap:28px 40px}}
+.footer .contact-list strong{color:#fff;margin-bottom:.15em}
+.footer .contact-list .i{color:var(--amber)}
+.footer a{text-decoration:none}
+.footer a:hover{color:var(--amber)}
+.footer__bottom{margin-top:48px;padding-top:24px;border-top:1px solid var(--line-light);font-size:.88rem;color:#a9a396;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+</style>
+
+<!-- ============================================================
+  DATOS ESTRUCTURADOS (Schema.org) — EDITAR si cambian datos de contacto/precios
+============================================================ -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"FoodEstablishment",
+      "@id":"https://empanadaselprogreso.com.ar/#negocio",
+      "name":"Empanadas El Progreso",
+      "description":"Empanadas al horno de barro hechas a mano. Venta con retiro en el local.",
+      "url":"https://empanadaselprogreso.com.ar/",
+      "telephone":"+541143723350",
+      "servesCuisine":"Empanadas argentinas",
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Sarmiento 1334",
+        "addressLocality":"Ciudad Autónoma de Buenos Aires",
+        "addressCountry":"AR"
+      },
+      "openingHoursSpecification":[{
+        "@type":"OpeningHoursSpecification",
+        "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens":"08:00","closes":"23:00"
+      }],
+      "paymentAccepted":"Efectivo",
+      "makesOffer":{
+        "@type":"Offer",
+        "name":"3 docenas de empanadas clásicas",
+        "price":"49900",
+        "priceCurrency":"ARS",
+        "availability":"https://schema.org/InStock"
+      }
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"¿Las empanadas son al horno o fritas?","acceptedAnswer":{"@type":"Answer","text":"Son al horno de barro, no fritas. La cocción tradicional deja la masa dorada y el relleno jugoso."}},
+        {"@type":"Question","name":"¿Cuánto cuesta una docena de empanadas?","acceptedAnswer":{"@type":"Answer","text":"La docena de clásicas sale $18.000 ($1.500 cada una). Con la promo, 3 docenas de clásicas cuestan $49.900."}},
+        {"@type":"Question","name":"¿Qué gustos de empanadas tienen?","acceptedAnswer":{"@type":"Answer","text":"Clásicas (carne, pollo, capresse, humita, queso y cebolla, jamón y queso, verdura y salsa blanca, salteña), especiales (roquefort, apio y nuez) y premium (vacío con provoleta, matambre a la pizza, osobuco con vegetales)."}},
+        {"@type":"Question","name":"¿Hacen delivery o envíos a domicilio?","acceptedAnswer":{"@type":"Answer","text":"No. La venta es únicamente con retiro en el local, en Sarmiento 1334."}},
+        {"@type":"Question","name":"¿Hasta qué hora puedo pedir?","acceptedAnswer":{"@type":"Answer","text":"Atendemos todos los días, incluidos feriados, de 8 a 23 h."}},
+        {"@type":"Question","name":"¿Cómo puedo pagar?","acceptedAnswer":{"@type":"Answer","text":"Pago en efectivo."}},
+        {"@type":"Question","name":"¿Venden empanadas por mayor para comercios?","acceptedAnswer":{"@type":"Answer","text":"Sí. Abastecemos a kioscos, bares, restaurantes, estaciones de servicio y clubes."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<!-- ============================================================
+  SPRITE DE ÍCONOS (Lucide, SVG inline, trazo lineal). Uso: <svg class="i"><use href="#i-nombre"/></svg>
+============================================================ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-cash" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/></symbol>
+</svg>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<!-- ============================================================
+  1. HEADER FIJO — EDITAR: logo (img/…), links del menú y CTA
+============================================================ -->
+<header class="header">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Empanadas El Progreso — ir al inicio">
+      <img src="img/logo-empanadas-el-progreso-white.svg" alt="Empanadas El Progreso" width="68" height="52" decoding="async">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+      <svg class="i i-open" aria-hidden="true"><use href="#i-menu"/></svg>
+      <svg class="i i-close" aria-hidden="true"><use href="#i-x"/></svg>
+    </button>
+    <nav class="nav" id="menu" aria-label="Principal">
+      <a href="#variedades">Variedades</a>
+      <a href="#promo">Promo</a>
+      <a href="#como-pedir">Cómo pedir</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#gremio">Para comercios</a>
+      <a class="btn btn--primary" href="https://wa.me/5491138833144?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20empanadas" rel="noopener">
+        <svg class="i" aria-hidden="true"><use href="#i-chat"/></svg>Pedir por WhatsApp
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- ============================================================
+  2. HERO — EDITAR: imagen de fondo, H1, bajada y botones
+============================================================ -->
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <img class="hero__bg" src="img/hero-casa-de-empanadas-el-progreso-en-caba-0012.jpg" alt="Empanadas doradas al horno de barro sobre una mesa de madera" width="1920" height="858" fetchpriority="high" decoding="async">
+  <div class="wrap">
+    <div class="hero__inner">
+      <h1 id="hero-title">Empanadas al horno de barro en Buenos Aires: hechas a mano, grandes y jugosas</h1>
+      <p class="lead">Las empanadas de El Progreso Restaurante, listas para retirar en Sarmiento 1334. Abierto todos los días, de 8 a 23 h.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="https://wa.me/5491138833144?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20empanadas" rel="noopener">
+          <svg class="i" aria-hidden="true"><use href="#i-chat"/></svg>Pedir por WhatsApp
+        </a>
+        <a class="btn btn--ghost" href="tel:+541143723350">
+          <svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Llamar al 4372-3350
+        </a>
+      </div>
+      <a class="hero__link" href="#gremio">¿Tenés un comercio? Ver venta por mayor
+        <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  3. SOBRE NOSOTROS — imagen lateral. EDITAR: textos e imagen
+============================================================ -->
+<section class="section" id="nosotros" aria-labelledby="nosotros-title">
+  <div class="wrap split">
+    <div class="split__media reveal">
+      <img src="img/casa-de-empanadas-el-progreso-en-caba-14.jpg" alt="Empanada saliendo del horno de barro frente al fuego" width="700" height="700" loading="lazy" decoding="async">
+    </div>
+    <div class="reveal" style="--d:.1s">
+      <p class="eyebrow">Sobre nosotros</p>
+      <h2 id="nosotros-title">La empanada del restaurante, ahora para llevarte</h2>
+      <p>Hay empanadas que se abren y son más masa que relleno. Las nuestras salen del horno de barro, con la misma receta que sirve El Progreso Restaurante, en pleno centro de Buenos Aires.</p>
+      <p>Son <strong>empanadas artesanales</strong>, grandes y jugosas, con relleno de sobra en cada bocado. Se comen con la mano, sin cubiertos. Sirven para un almuerzo casual, una cena especial o una juntada con amigos.</p>
+
+      <ul class="pillars">
+        <li class="pillar">
+          <svg class="i" aria-hidden="true"><use href="#i-flame"/></svg>
+          <div>
+            <h3>Horno de barro: la diferencia se prueba</h3>
+            <p>Calor envolvente y parejo: la masa sale <strong>dorada y crocante por fuera</strong> y el relleno queda <strong>jugoso por dentro</strong>. Es la cocción tradicional argentina.</p>
+          </div>
+        </li>
+        <li class="pillar">
+          <svg class="i" aria-hidden="true"><use href="#i-hand"/></svg>
+          <div>
+            <h3>Hechas a mano, una por una</h3>
+            <p>Cada empanada se arma a mano, con el mismo cuidado que ponemos en el restaurante. Mantenemos vivo un plato que es símbolo nacional.</p>
+          </div>
+        </li>
+        <li class="pillar">
+          <svg class="i" aria-hidden="true"><use href="#i-leaf"/></svg>
+          <div>
+            <h3>Ingredientes frescos, receta del restaurante</h3>
+            <p>Los mismos ingredientes frescos y las mismas recetas tradicionales de El Progreso Restaurante. Sabor y calidad al alcance de todos.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  4. FULL-BLEED COLOR SÓLIDO (carbón) — Variedades y precios
+  Ancho 100vw sin márgenes; el contenido vive en .wrap (max-width interno).
+  EDITAR: gustos y precios (también en la tabla y en el JSON-LD del <head>)
+============================================================ -->
+<section class="section bleed bleed--carbon" id="variedades" aria-labelledby="var-title">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-bottom:0">
+      <p class="eyebrow">Variedades</p>
+      <h2 id="var-title">Nuestras empanadas: clásicas, especiales y premium</h2>
+      <p class="lead">Tres opciones para todos los gustos. Elegí por sabor o armá tu pedido mezclado.</p>
+    </div>
+
+    <div class="tiers">
+      <article class="tier reveal">
+        <h3>Empanadas clásicas</h3>
+        <p class="tier__price">$1.500 <small>cada una</small></p>
+        <ul>
+          <li>Carne</li>
+          <li>Pollo</li>
+          <li>Capresse</li>
+          <li>Humita</li>
+          <li>Queso y cebolla</li>
+          <li>Jamón y queso</li>
+          <li>Verdura y salsa blanca</li>
+          <li><strong>Salteña auténtica</strong><span>Carne de res cortada a cuchillo, con papas, cebolla y especias seleccionadas. La esencia de la cocina del norte argentino.</span></li>
+        </ul>
+      </article>
+
+      <article class="tier reveal" style="--d:.1s">
+        <h3>Empanadas especiales</h3>
+        <p class="tier__price">$2.600 <small>cada una</small></p>
+        <ul>
+          <li><strong>Roquefort, apio y nuez</strong><span>Para quienes buscan sabores intensos: la cremosidad del roquefort, la frescura del apio y el crujido de la nuez se equilibran en cada bocado.</span></li>
+        </ul>
+      </article>
+
+      <article class="tier reveal" style="--d:.2s">
+        <h3>Empanadas premium</h3>
+        <p class="tier__price">$2.800 <small>cada una</small></p>
+        <p>Recetas exclusivas con ingredientes de primera calidad:</p>
+        <ul>
+          <li>Vacío con provoleta</li>
+          <li>Matambre a la pizza</li>
+          <li>Osobuco con vegetales</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="pricing reveal">
+      <h2>Cuánto cuesta una docena de empanadas en Buenos Aires</h2>
+      <p>Estos son los precios de nuestras empanadas al horno de barro en El Progreso Restaurante.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Tipo</th><th scope="col">Por unidad</th><th scope="col">Por docena</th></tr></thead>
+          <tbody>
+            <tr><th scope="row" style="font-weight:500">Clásicas</th><td>$1.500</td><td>$18.000</td></tr>
+            <tr><th scope="row" style="font-weight:500">Especiales (roquefort, apio y nuez)</th><td>$2.600</td><td>$31.200</td></tr>
+            <tr><th scope="row" style="font-weight:500">Premium (vacío, matambre, osobuco)</th><td>$2.800</td><td>$33.600</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note"><svg class="i" aria-hidden="true"><use href="#i-cash"/></svg>Pago en efectivo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  5. GALERÍA — CSS grid responsive con hover (zoom + degradé)
+  EDITAR: cada <figure> es una foto. Clase "tall" = ocupa 2 filas.
+  Mantené width/height reales de cada archivo (evita CLS).
+============================================================ -->
+<section class="section" id="galeria" aria-labelledby="gal-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Galería</p>
+      <h2 id="gal-title">Así salen del horno de barro</h2>
+      <p class="lead muted">Doradas, crocantes y con relleno de sobra.</p>
+    </div>
+    <div class="gallery">
+      <figure class="tall reveal"><img src="img/casa-de-empanadas-el-progreso-en-caba-004.jpg" alt="Empanada abierta al medio mostrando el relleno" width="1200" height="1800" loading="lazy" decoding="async"></figure>
+      <figure class="reveal" style="--d:.05s"><img src="img/casa-de-empanadas-el-progreso-en-caba-11.jpg" alt="Pila de empanadas al horno de barro sobre una tabla de madera" width="1200" height="800" loading="lazy" decoding="async"></figure>
+      <figure class="reveal" style="--d:.1s"><img src="img/casa-de-empanadas-el-progreso-en-caba-21.jpg" alt="Fuente de barro con empanadas recién horneadas" width="1200" height="800" loading="lazy" decoding="async"></figure>
+      <figure class="tall reveal" style="--d:.15s"><img src="img/casa-de-empanadas-el-progreso-en-caba-001.jpg" alt="Empanadas doradas, una abierta mostrando el relleno de carne" width="1200" height="1676" loading="lazy" decoding="async"></figure>
+      <figure class="reveal" style="--d:.1s"><img src="img/casa-de-empanadas-el-progreso-en-caba-08.jpg" alt="Empanadas doradas sobre una tabla de madera oscura" width="2048" height="1365" loading="lazy" decoding="async"></figure>
+      <figure class="reveal" style="--d:.15s"><img src="img/casa-de-empanadas-el-progreso-en-caba-19.jpg" alt="Empanada al horno de barro cortada al medio, mostrando el relleno de carne" width="1024" height="682" loading="lazy" decoding="async"></figure>
+      <figure class="reveal"><img src="img/casa-de-empanadas-el-progreso-en-caba-18.jpg" alt="Empanadas doradas junto a un cuenco de barro" width="1920" height="1280" loading="lazy" decoding="async"></figure>
+      <figure class="reveal" style="--d:.05s"><img src="img/casa-de-empanadas-el-progreso-en-caba-32.jpeg" alt="Bandeja de empanadas doradas recién salidas del horno de barro" width="2000" height="1333" loading="lazy" decoding="async"></figure>
+      <figure class="reveal" style="--d:.1s"><img src="img/casa-de-empanadas-el-progreso-en-caba-006.jpg" alt="Empanadas doradas con un gajo de limón sobre una tabla" width="735" height="386" loading="lazy" decoding="async"></figure>
+      <figure class="reveal" style="--d:.15s"><img src="img/casa-de-empanadas-el-progreso-en-caba-13.jpg" alt="Empanadas doradas con repulgue artesanal" width="800" height="449" loading="lazy" decoding="async"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  6. FULL-BLEED COLOR SÓLIDO 2 (oliva) — PROMO + PNG transparente
+  El PNG (.promo__png) está en position:absolute y sobresale hacia la
+  sección siguiente. El padre NO tiene overflow:hidden (overflow:visible).
+  Para ajustar cuánto sobresale: variable --overlap en .bleed--olive (CSS).
+  EDITAR: texto de la promo, precio y PNG (img/…-02.png)
+  PENDIENTE: definir vigencia de la promo ("hasta agotar stock" o fecha).
+============================================================ -->
+<section class="section bleed bleed--olive" id="promo" aria-labelledby="promo-title">
+  <div class="wrap">
+    <div class="promo__body reveal">
+      <p class="eyebrow">Promo</p>
+      <h2 id="promo-title">Promo: 3 docenas de empanadas clásicas por</h2>
+      <p class="promo__big" aria-hidden="true">$49.900</p>
+      <p>Pagás <strong>$16.633 por docena</strong> y ahorrás <strong>$4.100</strong> frente al precio por unidad.</p>
+      <p>Es la opción pensada para reuniones, familias y pedidos grandes: 36 empanadas con la mejor relación precio-calidad en empanadas en CABA.</p>
+      <p>Incluye cualquiera de las clásicas: carne, pollo, capresse, humita, queso y cebolla, jamón y queso, verdura y salsa blanca, o salteña.</p>
+      <ul class="promo__facts">
+        <li><svg class="i" aria-hidden="true"><use href="#i-bag"/></svg>Retiro en el local</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-cash"/></svg>Pago en efectivo</li>
+      </ul>
+      <a class="btn btn--dark" href="https://wa.me/5491138833144?text=Hola!%20Quiero%20la%20promo%20de%203%20docenas%20de%20empanadas%20cl%C3%A1sicas" rel="noopener">
+        <svg class="i" aria-hidden="true"><use href="#i-chat"/></svg>Pedir mi promo por WhatsApp
+      </a>
+    </div>
+  </div>
+  <img class="promo__png" src="img/casa-de-empanadas-el-progreso-en-caba-02.png" alt="Empanada al horno de barro con otra cortada al medio mostrando el relleno" width="642" height="428" loading="lazy" decoding="async">
+</section>
+
+<!-- ============================================================
+  7. CARDS CON ÍCONOS — Cómo pedir + datos clave
+  (.after-overlap deja lugar al PNG que sobresale de la sección anterior)
+============================================================ -->
+<section class="section after-overlap" id="como-pedir" aria-labelledby="pedir-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Cómo pedir</p>
+      <h2 id="pedir-title">Cómo pedir tus empanadas: rápido y sin vueltas</h2>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <span class="card__n">PASO 1</span>
+        <svg class="i" aria-hidden="true"><use href="#i-chat"/></svg>
+        <h3>Escribinos o llamanos</h3>
+        <p>Por WhatsApp al <a href="https://wa.me/5491138833144" rel="noopener">11-3883-3144</a> o llamá al <a href="tel:+541144721908">11-4472-1908</a>, al <a href="tel:+541143723350">4372-3350</a> o al <a href="tel:+541143723380">4372-3380</a>.</p>
+      </article>
+      <article class="card reveal" style="--d:.1s">
+        <span class="card__n">PASO 2</span>
+        <svg class="i" aria-hidden="true"><use href="#i-list"/></svg>
+        <h3>Decinos gustos y cantidades</h3>
+        <p>Elegí por sabor o armá tu pedido mezclado.</p>
+      </article>
+      <article class="card reveal" style="--d:.2s">
+        <span class="card__n">PASO 3</span>
+        <svg class="i" aria-hidden="true"><use href="#i-bag"/></svg>
+        <h3>Retirá y pagá en efectivo</h3>
+        <p>Pasá por Sarmiento 1334 a buscar tu pedido.</p>
+      </article>
+    </div>
+    <div class="cards cards--facts">
+      <div class="card reveal"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><h3>Solo retiro en el local</h3><p>Sin envíos a domicilio.</p></div>
+      <div class="card reveal" style="--d:.1s"><svg class="i" aria-hidden="true"><use href="#i-cash"/></svg><h3>Pago en efectivo</h3><p>Únicamente efectivo.</p></div>
+      <div class="card reveal" style="--d:.2s"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><h3>Todos los días, 8 a 23 h</h3><p>Incluidos feriados.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  8. TESTIMONIOS — OCULTO A PROPÓSITO
+  El documento de textos no incluye reseñas reales y no se deben inventar.
+  Cuando tengas reseñas verdaderas (Google, WhatsApp con permiso, etc.):
+  1) Quitá el atributo hidden de la <section>.
+  2) Reemplazá cada cita, nombre y origen por los reales.
+  3) Agregá un enlace a la fuente (ej. reseña de Google).
+============================================================ -->
+<section class="section bg-alt" id="testimonios" aria-labelledby="test-title" hidden>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Testimonios</p>
+      <h2 id="test-title">Lo que dicen quienes ya las probaron</h2>
+    </div>
+    <div class="testimonials">
+      <figure class="quote reveal">
+        <blockquote>“REEMPLAZAR por reseña real.”</blockquote>
+        <figcaption>Nombre del cliente · Fuente</figcaption>
+      </figure>
+      <figure class="quote reveal" style="--d:.1s">
+        <blockquote>“REEMPLAZAR por reseña real.”</blockquote>
+        <figcaption>Nombre del cliente · Fuente</figcaption>
+      </figure>
+      <figure class="quote reveal" style="--d:.2s">
+        <blockquote>“REEMPLAZAR por reseña real.”</blockquote>
+        <figcaption>Nombre del cliente · Fuente</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  UBICACIÓN Y HORARIOS + MAPA — EDITAR: datos de contacto
+============================================================ -->
+<section class="section bg-alt" id="ubicacion" aria-labelledby="ubi-title">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="eyebrow">Ubicación y horarios</p>
+      <h2 id="ubi-title">Abierto todos los días, de 8 a 23 h, en Sarmiento 1334</h2>
+      <p>Estamos en el centro de Buenos Aires. Atendemos de lunes a viernes, sábados, domingos y feriados.</p>
+      <ul class="contact-list">
+        <li><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><address><strong>Dirección</strong>Sarmiento 1334, Ciudad de Buenos Aires</address></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><div><strong>Horario para pedir empanadas</strong>De 8:00 a 23:00 h, todos los días</div></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg><div><strong>WhatsApp</strong><a href="https://wa.me/5491138833144" rel="noopener">11-3883-3144</a></div></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><div><strong>Teléfonos</strong><a href="tel:+541144721908">11-4472-1908</a> · <a href="tel:+541143723350">4372-3350</a> · <a href="tel:+541143723380">4372-3380</a></div></li>
+      </ul>
+    </div>
+    <div class="map reveal" style="--d:.1s">
+      <iframe title="Mapa de Empanadas El Progreso, Sarmiento 1334, Ciudad de Buenos Aires" src="https://www.google.com/maps?q=Sarmiento+1334,+Ciudad+de+Buenos+Aires,+Argentina&amp;z=16&amp;output=embed" width="600" height="400" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  PREGUNTAS FRECUENTES — <details> nativo, sin JS. EDITAR textos
+  (si los cambiás, actualizá también el JSON-LD FAQPage del <head>)
+============================================================ -->
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2 id="faq-title">Preguntas frecuentes sobre nuestras empanadas</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary><h3 style="all:inherit;margin:0;font-size:inherit">¿Las empanadas son al horno o fritas?</h3><svg class="i" aria-hidden="true"><use href="#i-down"/></svg></summary>
+        <p>Son al horno de barro, no fritas. La cocción tradicional deja la masa dorada y el relleno jugoso.</p>
+      </details>
+      <details>
+        <summary><h3 style="all:inherit;margin:0;font-size:inherit">¿Cuánto cuesta una docena de empanadas?</h3><svg class="i" aria-hidden="true"><use href="#i-down"/></svg></summary>
+        <p>La docena de clásicas sale $18.000 ($1.500 cada una). Con la promo, 3 docenas de clásicas cuestan $49.900.</p>
+      </details>
+      <details>
+        <summary><h3 style="all:inherit;margin:0;font-size:inherit">¿Qué gustos de empanadas tienen?</h3><svg class="i" aria-hidden="true"><use href="#i-down"/></svg></summary>
+        <p>Clásicas (carne, pollo, capresse, humita, queso y cebolla, jamón y queso, verdura y salsa blanca, salteña), especiales (roquefort, apio y nuez) y premium (vacío con provoleta, matambre a la pizza, osobuco con vegetales).</p>
+      </details>
+      <details>
+        <summary><h3 style="all:inherit;margin:0;font-size:inherit">¿Hacen delivery o envíos a domicilio?</h3><svg class="i" aria-hidden="true"><use href="#i-down"/></svg></summary>
+        <p>No. La venta es únicamente con retiro en el local, en Sarmiento 1334.</p>
+      </details>
+      <details>
+        <summary><h3 style="all:inherit;margin:0;font-size:inherit">¿Hasta qué hora puedo pedir?</h3><svg class="i" aria-hidden="true"><use href="#i-down"/></svg></summary>
+        <p>Atendemos todos los días, incluidos feriados, de 8 a 23 h.</p>
+      </details>
+      <details>
+        <summary><h3 style="all:inherit;margin:0;font-size:inherit">¿Cómo puedo pagar?</h3><svg class="i" aria-hidden="true"><use href="#i-down"/></svg></summary>
+        <p>Pago en efectivo.</p>
+      </details>
+      <details>
+        <summary><h3 style="all:inherit;margin:0;font-size:inherit">¿Venden empanadas por mayor para comercios?</h3><svg class="i" aria-hidden="true"><use href="#i-down"/></svg></summary>
+        <p>Sí. Abastecemos a kioscos, bares, restaurantes, estaciones de servicio y clubes. <a href="#gremio"><strong>Mirá la sección para el gremio.</strong></a></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  BLOQUE PUENTE B2B — id="gremio". Punto de inicio de la futura sección B2B.
+  EDITAR: cuando exista la página/sección B2B, cambiar el href del botón.
+============================================================ -->
+<section class="section bg-alt gremio" id="gremio" aria-labelledby="gremio-title">
+  <div class="wrap split split--rev">
+    <div class="split__media reveal">
+      <img src="img/casa-de-empanadas-el-progreso-en-caba-005.jpg" alt="Pila de empanadas doradas al horno sobre una tabla de madera" width="728" height="728" loading="lazy" decoding="async">
+    </div>
+    <div class="reveal" style="--d:.1s">
+      <p class="eyebrow">Para el gremio</p>
+      <h2 id="gremio-title">¿Tenés un comercio? Vendé empanadas al horno de barro</h2>
+      <p>Somos proveedores directos y continuos de empanadas al horno, listas para consumir. Un producto de alta demanda, con la calidad de El Progreso.</p>
+      <p class="muted">Abastecemos a kioscos, bares, restaurantes, estaciones de servicio y clubes.</p>
+      <!-- EDITAR href: hoy apunta a este mismo bloque; cambiar por la sección/página B2B cuando exista -->
+      <a class="btn btn--dark" href="#gremio">
+        <svg class="i" aria-hidden="true"><use href="#i-store"/></svg>Ver venta por mayor para el gremio
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  CTA FINAL — EDITAR: imagen de fondo y textos
+============================================================ -->
+<section class="section cta-final" aria-labelledby="cta-title">
+  <img class="cta-final__bg" src="img/casa-de-empanadas-el-progreso-en-caba-15.webp" alt="" width="1000" height="669" loading="lazy" decoding="async">
+  <div class="wrap reveal">
+    <h2 id="cta-title">Pedí hoy tus empanadas al horno de barro</h2>
+    <p>Escribinos al WhatsApp <strong>11-3883-3144</strong> o pasá por <strong>Sarmiento 1334</strong>. Abrimos todos los días, de 8 a 23 h.</p>
+    <a class="btn btn--primary" href="https://wa.me/5491138833144?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20empanadas" rel="noopener">
+      <svg class="i" aria-hidden="true"><use href="#i-chat"/></svg>Hacer mi pedido por WhatsApp
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+  9. FOOTER — contacto + logo. Sin redes sociales (aún no existen).
+============================================================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__logo">
+        <img src="img/logo-empanadas-el-progreso-white.svg" alt="Empanadas El Progreso" width="150" height="115" loading="lazy" decoding="async">
+        <p>Empanadas al horno de barro, hechas a mano en Buenos Aires.</p>
+      </div>
+      <ul class="contact-list">
+        <li><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><div><strong>Teléfonos</strong><a href="tel:+541143723350">4372-3350</a> · <a href="tel:+541143723380">4372-3380</a><br><a href="tel:+541144721908">11-4472-1908</a> · <a href="https://wa.me/5491138833144" rel="noopener">WhatsApp 11-3883-3144</a></div></li>
+        <!-- EMAIL: el documento de textos no trae un email. Completar y descomentar:
+        <li><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><div><strong>Email</strong><a href="mailto:TU-EMAIL@empanadaselprogreso.com.ar">TU-EMAIL@empanadaselprogreso.com.ar</a></div></li>
+        -->
+        <li><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><address><strong>Dirección</strong>Sarmiento 1334<br>Ciudad de Buenos Aires</address></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><div><strong>Horarios</strong>Todos los días, de 8 a 23 h<br>Incluidos feriados</div></li>
+      </ul>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="anio">2026</span> Empanadas El Progreso. Todos los derechos reservados.</span>
+      <span>Venta con retiro en el local · Pago en efectivo</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+  JS MÍNIMO: (1) toggle del menú mobile, (2) IntersectionObserver para animaciones
+============================================================ -->
+<script>
+(function(){
+  var btn=document.querySelector('.nav-toggle'),nav=document.getElementById('menu');
+  function setMenu(open){
+    nav.classList.toggle('is-open',open);
+    btn.setAttribute('aria-expanded',open);
+    btn.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');
+  }
+  btn.addEventListener('click',function(){setMenu(btn.getAttribute('aria-expanded')!=='true')});
+  nav.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('is-in')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('is-in');io.unobserve(en.target)}});
+  },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
