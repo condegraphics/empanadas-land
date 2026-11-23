@@ -175,7 +175,9 @@ ul{margin:0;padding:0;list-style:none}
 .tier ul li:last-child{border-bottom:0}
 .tier ul li span{display:block;font-size:.95rem;color:#cfc9bc;margin-top:.15em}
 .tier p{color:#e0dacd}
+.tier__img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--radius);margin-bottom:1.4rem;background:var(--carbon-deep)}
 .tier h3{margin-bottom:0}
+@media (min-width:900px){.tier__img{aspect-ratio:auto;height:210px}} /* misma altura en las 3 columnas para alinear títulos */
 
 .pricing{margin-top:clamp(56px,8vw,96px);max-width:760px}
 .pricing h2{font-size:clamp(1.5rem,2.8vw,2.1rem)}
@@ -490,6 +492,7 @@ address{font-style:normal}
 
     <div class="tiers">
       <article class="tier reveal">
+        <img class="tier__img" src="img/empanadas-clasicas.jpg" alt="Empanadas clásicas al horno de barro, una abierta mostrando el relleno de carne y aceituna" width="700" height="466" loading="lazy" decoding="async">
         <h3>Empanadas clásicas</h3>
         <p class="tier__price">$1.500 <small>cada una</small></p>
         <ul>
@@ -505,6 +508,7 @@ address{font-style:normal}
       </article>
 
       <article class="tier reveal" style="--d:.1s">
+        <img class="tier__img" src="img/empanadas-especiales.jpg" alt="Empanadas especiales al horno de barro, abiertas al medio con relleno jugoso, sobre tabla de madera" width="700" height="466" loading="lazy" decoding="async">
         <h3>Empanadas especiales</h3>
         <p class="tier__price">$2.600 <small>cada una</small></p>
         <ul>
@@ -513,6 +517,7 @@ address{font-style:normal}
       </article>
 
       <article class="tier reveal" style="--d:.2s">
+        <img class="tier__img" src="img/empanadas-premium.jpg" alt="Pila de empanadas premium doradas al horno de barro servidas sobre una tabla de madera" width="1200" height="800" loading="lazy" decoding="async">
         <h3>Empanadas premium</h3>
         <p class="tier__price">$2.800 <small>cada una</small></p>
         <p>Recetas exclusivas con ingredientes de primera calidad:</p>
@@ -739,7 +744,7 @@ address{font-style:normal}
 <section class="section bg-alt gremio" id="gremio" aria-labelledby="gremio-title">
   <div class="wrap split split--rev">
     <div class="split__media reveal">
-      <img src="img/casa-de-empanadas-el-progreso-en-caba-005.jpg" alt="Pila de empanadas doradas al horno sobre una tabla de madera" width="728" height="728" loading="lazy" decoding="async">
+      <img src="img/empanadas-para-el-gremio.jpg" alt="Bandeja de empanadas al horno de barro listas para reventa en comercios" width="700" height="466" loading="lazy" decoding="async">
     </div>
     <div class="reveal" style="--d:.1s">
       <p class="eyebrow">Para el gremio</p>
