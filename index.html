@@ -142,6 +142,7 @@ ul{margin:0;padding:0;list-style:none}
 .hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(30,27,28,.55) 0%,rgba(30,27,28,.45) 40%,rgba(30,27,28,.8) 100%)}
 .hero__inner{max-width:780px}
+@media (min-width:960px){.hero__inner{max-width:960px}.hero h1{font-size:clamp(3rem,6.7vw,5.1rem)}} /* escritorio: H1 +20% */
 .hero h1{color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.35)}
 .hero p.lead{max-width:56ch;color:#F4EFE4}
 .hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin:2rem 0 1.4rem}
@@ -430,8 +431,8 @@ address{font-style:normal}
   <img class="hero__bg" src="img/hero-casa-de-empanadas-el-progreso-en-caba-0012.jpg" alt="Empanadas doradas al horno de barro sobre una mesa de madera" width="1920" height="858" fetchpriority="high" decoding="async">
   <div class="wrap">
     <div class="hero__inner">
-      <h1 id="hero-title">Empanadas al horno de barro en Buenos Aires: hechas a mano, grandes y jugosas</h1>
-      <p class="lead">Las empanadas de El Progreso Restaurante, listas para retirar en Sarmiento 1334. Abierto todos los días, de 8 a 23 h.</p>
+      <h1 id="hero-title">Empanadas al horno de barro en Buenos Aires.</h1>
+      <p class="lead">Hechas a mano, grandes y jugosas. Calidad premium de El Progreso Restaurante.</p>
       <div class="hero__cta">
         <a class="btn btn--primary" href="https://wa.me/5491138833144?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20empanadas" rel="noopener">
           <svg class="i" aria-hidden="true"><use href="#i-chat"/></svg>Pedir por WhatsApp
