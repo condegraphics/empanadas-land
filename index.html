@@ -258,8 +258,20 @@ tbody td:last-child{font-family:var(--font-title);font-size:1.25rem;color:var(--
 .contact-list strong{display:block;font-weight:600}
 .contact-list a{text-underline-offset:3px}
 address{font-style:normal}
-.map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:320px;background:var(--bg-alt)}
-.map iframe{display:block;width:100%;height:100%;min-height:360px;border:0}
+/* Ubicación: 2 columnas (texto + CTA | grilla de datos) */
+.loc{display:grid;gap:40px;align-items:start}
+@media (min-width:900px){.loc{grid-template-columns:5fr 6fr;gap:80px;align-items:center}}
+.loc__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.8rem}
+.btn--outline{border-color:var(--carbon);color:var(--carbon)}
+.btn--outline:hover{background:var(--carbon);color:var(--cream)}
+.info{display:grid;gap:16px}
+@media (min-width:560px){.info{grid-template-columns:1fr 1fr}}
+.info__item{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;display:flex;flex-direction:column;gap:6px}
+.info__item .i{width:32px;height:32px;color:var(--amber);margin-bottom:10px}
+.info__item h3{font-size:1.05rem;margin:0}
+.info__item p{margin:0;color:var(--ink-soft);font-size:1rem}
+.info__item a{text-underline-offset:3px;color:var(--ink)}
+.info__item--wide{grid-column:1/-1}
 
 /* ============================================================
    FAQ (details/summary nativo, sin JS)
@@ -672,20 +684,22 @@ address{font-style:normal}
   UBICACIÓN Y HORARIOS + MAPA — EDITAR: datos de contacto
 ============================================================ -->
 <section class="section bg-alt" id="ubicacion" aria-labelledby="ubi-title">
-  <div class="wrap split">
+  <div class="wrap loc">
     <div class="reveal">
       <p class="eyebrow">Ubicación y horarios</p>
       <h2 id="ubi-title">Abierto todos los días, de 8 a 23 h, en Sarmiento 1334</h2>
-      <p>Estamos en el centro de Buenos Aires. Atendemos de lunes a viernes, sábados, domingos y feriados.</p>
-      <ul class="contact-list">
-        <li><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><address><strong>Dirección</strong>Sarmiento 1334, Ciudad de Buenos Aires</address></li>
-        <li><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><div><strong>Horario para pedir empanadas</strong>De 8:00 a 23:00 h, todos los días</div></li>
-        <li><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg><div><strong>WhatsApp</strong><a href="https://wa.me/5491138833144" rel="noopener">11-3883-3144</a></div></li>
-        <li><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><div><strong>Teléfonos</strong><a href="tel:+541144721908">11-4472-1908</a> · <a href="tel:+541143723350">4372-3350</a> · <a href="tel:+541143723380">4372-3380</a></div></li>
-      </ul>
+      <p class="lead">Estamos en el centro de Buenos Aires. Atendemos de lunes a viernes, sábados, domingos y feriados.</p>
+      <div class="loc__cta">
+        <a class="btn btn--dark" href="https://wa.me/5491138833144?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20empanadas" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg>Pedir por WhatsApp</a>
+        <!-- Enlace externo a Google Maps (sin mapa embebido) -->
+        <a class="btn btn--outline" href="https://www.google.com/maps/search/?api=1&amp;query=Sarmiento+1334%2C+Ciudad+de+Buenos+Aires" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>Cómo llegar</a>
+      </div>
     </div>
-    <div class="map reveal" style="--d:.1s">
-      <iframe title="Mapa de Empanadas El Progreso, Sarmiento 1334, Ciudad de Buenos Aires" src="https://www.google.com/maps?q=Sarmiento+1334,+Ciudad+de+Buenos+Aires,+Argentina&amp;z=16&amp;output=embed" width="600" height="400" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    <div class="info reveal" style="--d:.1s">
+      <address class="info__item"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><h3>Dirección</h3><p>Sarmiento 1334<br>Ciudad de Buenos Aires</p></address>
+      <div class="info__item"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><h3>Horario para pedir empanadas</h3><p>De 8:00 a 23:00 h, todos los días</p></div>
+      <div class="info__item"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg><h3>WhatsApp</h3><p><a href="https://wa.me/5491138833144" rel="noopener">11-3883-3144</a></p></div>
+      <div class="info__item"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><h3>Teléfonos</h3><p><a href="tel:+541144721908">11-4472-1908</a><br><a href="tel:+541143723350">4372-3350</a> · <a href="tel:+541143723380">4372-3380</a></p></div>
     </div>
   </div>
 </section>
