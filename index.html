@@ -200,26 +200,26 @@ tbody td:last-child{font-family:var(--font-title);font-size:1.25rem;color:var(--
 .gallery figure:hover img{transform:scale(1.06)}
 .gallery figure:hover::after{opacity:1}
 .gallery .tall{grid-row:span 2}
-@media (min-width:640px){.gallery{grid-template-columns:repeat(3,1fr);grid-auto-rows:200px;gap:16px}}
-@media (min-width:960px){.gallery{grid-template-columns:repeat(4,1fr);grid-auto-rows:230px}}
+@media (min-width:640px){.gallery{grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:16px}}
+@media (min-width:960px){.gallery{grid-auto-rows:250px}}
 
 /* ============================================================
    6. FULL-BLEED COLOR SÓLIDO 2 (oliva) + PNG transparente que sobresale
    El padre usa overflow:visible; el PNG se posiciona en absoluto y
    "cae" sobre la sección siguiente (ver --overlap).
 ============================================================ */
-.bleed--olive{--overlap:70px;background:var(--olive);color:var(--ink);overflow:visible;z-index:2;padding-bottom:calc(var(--sec-y) + 150px)}
+.bleed--olive{--hang:40px;background:var(--olive);color:var(--ink);overflow:visible;z-index:2}
 .bleed--olive .eyebrow{color:#6b4410}
-.promo__body{max-width:540px;position:relative;z-index:1}
+.promo{display:grid;gap:32px;align-items:end}
+.promo__body{max-width:540px}
 .promo__big{font-family:var(--font-title);font-size:clamp(2.6rem,7vw,4.6rem);line-height:1;margin:.2em 0 .1em;color:var(--carbon)}
 .promo__facts{display:flex;flex-wrap:wrap;gap:10px 24px;margin:1.4rem 0 1.8rem;font-weight:500}
 .promo__facts li{display:flex;align-items:center;gap:.5em}
-.promo__png{position:absolute;right:0;bottom:calc(var(--overlap) * -1);width:min(86vw,420px);height:auto;z-index:3;filter:drop-shadow(0 24px 28px rgba(30,27,28,.32));pointer-events:none}
-@media (min-width:640px){.bleed--olive{--overlap:90px;padding-bottom:calc(var(--sec-y) + 40px)}.promo__png{right:2%;width:min(52vw,480px)}}
-@media (min-width:960px){.bleed--olive{--overlap:120px;padding-bottom:var(--sec-y)}.promo__png{right:4%;width:min(46vw,600px)}}
-.after-overlap{padding-top:calc(var(--sec-y) + 70px)}
-@media (min-width:640px){.after-overlap{padding-top:calc(var(--sec-y) + 90px)}}
-@media (min-width:960px){.after-overlap{padding-top:calc(var(--sec-y) + 60px)}}
+/* PNG alineado al borde derecho del contenedor; sobresale --hang px hacia la sección siguiente (translateY, no afecta el layout) */
+.promo__png{width:min(100%,460px);height:auto;justify-self:end;position:relative;z-index:3;transform:translateY(calc(var(--sec-y) + var(--hang)));filter:drop-shadow(0 24px 28px rgba(30,27,28,.32));pointer-events:none}
+@media (min-width:900px){.bleed--olive{--hang:70px}.promo{grid-template-columns:1fr 1fr;gap:64px}.promo__png{width:min(100%,560px)}}
+.after-overlap{padding-top:calc(var(--sec-y) + 40px + 24px)}
+@media (min-width:900px){.after-overlap{padding-top:calc(var(--sec-y) + 70px + 24px)}}
 
 /* ============================================================
    7. CARDS CON ÍCONOS (cómo pedir + datos clave)
@@ -566,10 +566,6 @@ address{font-style:normal}
       <figure class="tall reveal" style="--d:.15s"><img src="img/casa-de-empanadas-el-progreso-en-caba-001.jpg" alt="Empanadas doradas, una abierta mostrando el relleno de carne" width="1200" height="1676" loading="lazy" decoding="async"></figure>
       <figure class="reveal" style="--d:.1s"><img src="img/casa-de-empanadas-el-progreso-en-caba-08.jpg" alt="Empanadas doradas sobre una tabla de madera oscura" width="2048" height="1365" loading="lazy" decoding="async"></figure>
       <figure class="reveal" style="--d:.15s"><img src="img/casa-de-empanadas-el-progreso-en-caba-19.jpg" alt="Empanada al horno de barro cortada al medio, mostrando el relleno de carne" width="1024" height="682" loading="lazy" decoding="async"></figure>
-      <figure class="reveal"><img src="img/casa-de-empanadas-el-progreso-en-caba-18.jpg" alt="Empanadas doradas junto a un cuenco de barro" width="1920" height="1280" loading="lazy" decoding="async"></figure>
-      <figure class="reveal" style="--d:.05s"><img src="img/casa-de-empanadas-el-progreso-en-caba-32.jpeg" alt="Bandeja de empanadas doradas recién salidas del horno de barro" width="2000" height="1333" loading="lazy" decoding="async"></figure>
-      <figure class="reveal" style="--d:.1s"><img src="img/casa-de-empanadas-el-progreso-en-caba-006.jpg" alt="Empanadas doradas con un gajo de limón sobre una tabla" width="735" height="386" loading="lazy" decoding="async"></figure>
-      <figure class="reveal" style="--d:.15s"><img src="img/casa-de-empanadas-el-progreso-en-caba-13.jpg" alt="Empanadas doradas con repulgue artesanal" width="800" height="449" loading="lazy" decoding="async"></figure>
     </div>
   </div>
 </section>
@@ -583,7 +579,7 @@ address{font-style:normal}
   PENDIENTE: definir vigencia de la promo ("hasta agotar stock" o fecha).
 ============================================================ -->
 <section class="section bleed bleed--olive" id="promo" aria-labelledby="promo-title">
-  <div class="wrap">
+  <div class="wrap promo">
     <div class="promo__body reveal">
       <p class="eyebrow">Promo</p>
       <h2 id="promo-title">Promo: 3 docenas de empanadas clásicas por</h2>
@@ -599,8 +595,8 @@ address{font-style:normal}
         <svg class="i" aria-hidden="true"><use href="#i-chat"/></svg>Pedir mi promo por WhatsApp
       </a>
     </div>
+    <img class="promo__png" src="img/casa-de-empanadas-el-progreso-en-caba-02.png" alt="Empanada al horno de barro con otra cortada al medio mostrando el relleno" width="642" height="428" loading="lazy" decoding="async">
   </div>
-  <img class="promo__png" src="img/casa-de-empanadas-el-progreso-en-caba-02.png" alt="Empanada al horno de barro con otra cortada al medio mostrando el relleno" width="642" height="428" loading="lazy" decoding="async">
 </section>
 
 <!-- ============================================================
